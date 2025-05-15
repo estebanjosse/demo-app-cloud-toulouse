@@ -72,7 +72,7 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ secrets.HARBOR_URL }}/library/standard-app:latest,${{ secrets.HARBOR_URL }}/library/standard-app:${{ github.sha }}
-          cache-from: type=registry,ref=${{ secrets.HARBOR_URL }}/library/standard-app:buildcache
+          cache-from: type=registry,ref=${{ secrets.HARBOR_URL }}/library/standard-app-ej:buildcache
           cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
           build-args: |
             PATH_APP=/app
