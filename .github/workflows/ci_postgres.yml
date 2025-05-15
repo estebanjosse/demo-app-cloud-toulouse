@@ -99,8 +99,8 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ secrets.HARBOR_URL }}/library/standard-app-postgres:latest,${{ secrets.HARBOR_URL }}/library/standard-app-postgres:${{ github.sha }}
-          cache-from: type=registry,ref=${{ secrets.HARBOR_URL }}/library/standard-app-postgres:buildcache
+          tags: ${{ secrets.HARBOR_URL }}/library/standard-app-ej-postgres:latest,${{ secrets.HARBOR_URL }}/library/standard-app-ej-postgres:${{ github.sha }}
+          cache-from: type=registry,ref=${{ secrets.HARBOR_URL }}/library/standard-app-ej-postgres:buildcache
           cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
           build-args: |
             PATH_APP=/app_postgres
