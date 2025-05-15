@@ -71,7 +71,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ secrets.HARBOR_URL }}/library/standard-app-ejo:latest,${{ secrets.HARBOR_URL }}/library/standard-app-ejo:${{ github.sha }}
+          tags: ${{ secrets.HARBOR_URL }}/library/standard-app-ej:latest,${{ secrets.HARBOR_URL }}/library/standard-app-ej:${{ github.sha }}
           cache-from: type=registry,ref=${{ secrets.HARBOR_URL }}/library/standard-app-ej:buildcache
           cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
           build-args: |
